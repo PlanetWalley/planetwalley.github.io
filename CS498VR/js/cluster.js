@@ -181,4 +181,8 @@ var cluster = {
 
 }
 
-cluster.init('to_cluster')
+if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) { // mobile
+
+} else {
+	cluster.init('to_cluster')
+}
