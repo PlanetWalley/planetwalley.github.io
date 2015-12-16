@@ -1,7 +1,3 @@
-#to_cluster.clustered {
-	margin-top: -50px;
-}
-
 #to_cluster {
 	position: absolute;
 	text-indent: -9999px;
@@ -14,7 +10,6 @@
 	display: block;
 	font-size: 150px;
 	height: 200px;
-	top: -100px;
 }
 
 .clustered svg {
@@ -25,7 +20,7 @@
 
 .intro-text{
   width: 1100px;
-  margin-top: 48px;
+  margin-top: 160px;
   background-color: rgba(69, 69, 69, 0.18);
   padding: 30px;
 }
