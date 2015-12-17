@@ -23,7 +23,7 @@
 .clustered svg {
   position: absolute;
   top: -12px;
-  left: 0;  
+  left: 0;
 }
 
 .intro-text{
@@ -38,7 +38,7 @@
     	margin-top: 0px;
 		width: 100% !important;
 	}
-} 
+}
 
 .navigate-btn {
 	width:1100px;
@@ -50,9 +50,9 @@
 	}
 }
 
-.black {
-    color: #777;
-    border-color: #777;
+.black { /* actually white color */
+    color: #fff;
+    border-color: #fff;
 }
 
 @media only screen and (max-device-width: 480px){

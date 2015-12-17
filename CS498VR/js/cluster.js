@@ -6,19 +6,19 @@
 //      function in canvas to pull the rendered pixel values for a given block
 //      of type and then reconstruct that pixel by pixel. Pretty cool, eh?
 //
-//      call it: 
+//      call it:
 //
 //               cluster.init()
 //
 //     cluster uses a lot of defaults. I'm not going to explain them to you
 //     because I figure it you've made it this far you can figure it out.
-//	   Anyways. They are at the bottom. 
+//	   Anyways. They are at the bottom.
 
 
-var cluster = {   
-    
+var cluster = {
 
- 	shellac : function(object, styles){ 
+
+ 	shellac : function(object, styles){
 	      //style getter for both standards based browsers and that other browser
 	      function getStyle(styleProp) {
 	      	if (object.currentStyle)
@@ -35,7 +35,7 @@ var cluster = {
 	  		  styles.weight = getStyle("font-weight");
 	  		  styles.size = parseInt(getStyle("font-size"));
 	  		  styles.style = getStyle("font-style");
-	  		  styles.color = getStyle("color"); 
+	  		  styles.color = getStyle("color");
 	  		  styles.leading = parseInt(getStyle("line-height"))
 			  }
 			  //create a canvas
@@ -49,7 +49,7 @@ var cluster = {
 			  context.font = styles.weight + " " + styles.style + " " + styles.size + "px " + styles.font
 			  //split up the string into words
 			  var text = object.innerHTML;
-			  var wordArray = text.split(" "); 
+			  var wordArray = text.split(" ");
 			  var phraseArray = new Array();
 			  var lastPhrase = ""
 
@@ -73,9 +73,9 @@ var cluster = {
 				  context.fillText(phraseArray[i], 0, (i * styles.leading) + styles.size);
 			  }
 			return canvas;
-	}, 
-	
-	
+	},
+
+
 	getTypeData : function(parent) {
 	  this.width = this.canvas.clientWidth
 	  this.height = this.canvas.clientHeight
@@ -92,7 +92,7 @@ var cluster = {
 	generateShapes : function() {
 		  var nodes = []
 		  for(var h=0;h<this.height;h+=this.density){
-		    for(var w=0;w<this.width;w+=this.density){   
+		    for(var w=0;w<this.width;w+=this.density){
 		       var pixel = this.imageData.data[((w+(h*this.width))*4)-1]
 		          if(pixel > 0) {
 		            nodes[w*h] = new this.Node(w,h,this)
@@ -116,17 +116,17 @@ var cluster = {
 			op = op + 1
 			parent.root.suspendRedraw(100)
 			t.el.setAttribute('opacity',op)
-			parent.root.unsuspendRedrawAll() 
+			parent.root.unsuspendRedrawAll()
 		}
 		var timer = window.setTimeout(changeOP,rando)
 		parent.root.appendChild(t.el)
-		t.grow = function(parent,evt) { 
+		t.grow = function(parent,evt) {
 			evt.target.Y = 0
 			var r = parent.radius, that = this
 		    this.loop = function() {
 		    	parent.root.suspendRedraw(100)
 				evt.target.Y = evt.target.Y - 6
-		    	evt.target.setAttribute('transform', 
+		    	evt.target.setAttribute('transform',
 				'translate(' + 0 + ',' + evt.target.Y + ')')
 		        r = r + 0.1
 		        evt.target.setAttribute('r',r)
@@ -135,10 +135,10 @@ var cluster = {
 			    	clearInterval(that.timer)
 				}
 		    }
-			that.timer = window.setInterval(this.loop,30) 
+			that.timer = window.setInterval(this.loop,30)
 		}
 		this.el.addEventListener("mouseover",
-			function(event){ 
+			function(event){
 				t.grow(parent,event)
 			}
 		,true)
@@ -146,24 +146,24 @@ var cluster = {
 		t.el.y = y
 		return this
 	},
-	
-  
+
+
 
 	init : function(target) {
 		  var c = this
 		  var target = document.getElementById(target)
-		  target.className += " clustered" 
+		  target.className += " clustered"
 	      c.root = document.createElementNS("http://www.w3.org/2000/svg", 'svg')
 	      c.root.setAttribute('width', target.clientWidth)
 	      c.root.setAttribute('height', target.clientHeight)
 		  c.root.setAttribute('id','clustered')
-		
+
 		  var boot = function() {
 			  c.canvas = c.shellac(target)
 			  c.imageData = c.getTypeData(target)
 			  var allNodes = c.generateShapes()
 		      target.appendChild(c.root)
-			  target.className += " active"   
+			  target.className += " active"
 		 }
 		 window.setTimeout(boot,100)
 	},
@@ -176,7 +176,7 @@ var cluster = {
 	shape: 'circle',
 	speed: 1000,
 	timeout: -700,
-	colors : ["#ffffff"/*"#00B6B8"/*//*,"#ED5F4C","#F9A235","#2E3192"*/] 
+	colors : ["#ffffff"/*"#00B6B8"/*//*,"#ED5F4C","#F9A235","#2E3192"*/]
 
 
 }
@@ -186,4 +186,25 @@ if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/))
 } else {
 	$("#to_cluster").addClass('desktop')
 	cluster.init('to_cluster')
+}
+
+
+/*
+  Demo Videos
+ */
+var image = new Image();
+image.src = "http://youtube.com/favicon.ico";
+
+image.onload = function(){
+// The user can access youtube
+  console.log('user can access youtube')
+  $('#trailer-link').attr('href', 'https://youtu.be/_FyYe45XgCM')
+  $('#demo-link').attr('href', 'https://www.youtube.com/watch?v=Sx23nVq6kP4')
+}
+
+image.onerror = function(){
+  // The user can't access youtube
+  console.log('user cant access youtube')
+  $('#trailer-link').attr('href', 'http://v.youku.com/v_show/id_XMTQxNTkwMTUwMA==.html')
+  $('#demo-link').attr('href', 'http://v.youku.com/v_show/id_XMTQxNTkwMTg4MA==.html')
 }
