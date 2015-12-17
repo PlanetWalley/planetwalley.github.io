@@ -1,9 +1,10 @@
-#to_cluster {
+#to_cluster.desktop {
 	position: absolute;
 	text-indent: -9999px;
 	width: 1100px;
 	left: 50%;
 	margin-left: -333px;
+	margin-bottom: -32px;
 	font-family: sans-serif;
 	font-weight: bold;
 	line-height: 200%;
@@ -13,8 +14,9 @@
 }
 
 #to_cluster.mobile {
+	margin-top: 60px;
 	width: 320px !important;
-	color: white;
+	color: #fff;
 }
 
 .clustered svg {
@@ -32,6 +34,7 @@
 
 @media only screen and (max-width: 480px){
 	.intro-text {
+		margin-top: 20px;
 		width: 320px !important;
 	}
 } 

@@ -184,5 +184,6 @@ var cluster = {
 if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) { // mobile
 	$("#to_cluster").addClass('mobile')
 } else {
+	$("#to_cluster").addClass('desktop')
 	cluster.init('to_cluster')
 }
