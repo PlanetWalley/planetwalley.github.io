@@ -209,6 +209,18 @@ image.onerror = function(){
   $('#demo-link').attr('href', 'http://v.youku.com/v_show/id_XMTQxNTkwMTg4MA==.html')
 }
 
+$.getJSON('http://api.wipmania.com/jsonp?callback=?', function (data) {
+  if (data.address.country === 'China') {
+    $('#trailer-link').attr('href', 'http://v.youku.com/v_show/id_XMTQxNTkwMTUwMA==.html')
+    $('#demo-link').attr('href', 'http://v.youku.com/v_show/id_XMTQxNTkwMTg4MA==.html')
+  }
+  /*
+  alert('Latitude: ' + data.latitude +
+        '\nLongitude: ' + data.longitude +
+        '\nCountry: ' + data.address.country);
+        */
+})
+
 // play background music
 var song = new Audio('../CS498VR/songs/bg.mp3')
 song.loop = true
