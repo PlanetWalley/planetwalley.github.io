@@ -17,6 +17,7 @@
 	font-size: 80px;
 	margin-top: 60px;
 	color: #fff;
+	margin-top: -572px;
 }
 
 .clustered svg {
@@ -34,7 +35,7 @@
 
 @media only screen and (max-device-width: 480px){
 	.intro-text {
-		margin-top: 20px;
+    	margin-top: 0px;
 		width: 100% !important;
 	}
 } 
@@ -52,4 +53,10 @@
 .black {
     color: #777;
     border-color: #777;
+}
+
+@media only screen and (max-device-width: 480px){
+    .intro {
+        /* height: 640px; */
+    }
 }
