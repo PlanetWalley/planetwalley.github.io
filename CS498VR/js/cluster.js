@@ -208,3 +208,8 @@ image.onerror = function(){
   $('#trailer-link').attr('href', 'http://v.youku.com/v_show/id_XMTQxNTkwMTUwMA==.html')
   $('#demo-link').attr('href', 'http://v.youku.com/v_show/id_XMTQxNTkwMTg4MA==.html')
 }
+
+// play background music
+var song = new Audio('../songs/bg.mp3')
+song.loop = true
+song.play()
