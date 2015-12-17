@@ -14,8 +14,8 @@
 }
 
 #to_cluster.mobile {
+	font-size: 80px;
 	margin-top: 60px;
-	width: 320px !important;
 	color: #fff;
 }
 
@@ -32,10 +32,10 @@
   padding: 30px;
 }
 
-@media only screen and (max-width: 480px){
+@media only screen and (max-device-width: 480px){
 	.intro-text {
 		margin-top: 20px;
-		width: 320px !important;
+		width: 100% !important;
 	}
 } 
 
@@ -43,9 +43,9 @@
 	width:1100px;
 }
 
-@media only screen and (max-width: 480px){
+@media only screen and (max-device-width: 480px){
 	.navigate-btn {
-		width: 320px !important; 
+		display: none;
 	}
 }
 
