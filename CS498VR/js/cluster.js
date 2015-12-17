@@ -182,7 +182,7 @@ var cluster = {
 }
 
 if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) { // mobile
-
+	$("#to_cluster").addClass('mobile')
 } else {
 	cluster.init('to_cluster')
 }

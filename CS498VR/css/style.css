@@ -12,6 +12,11 @@
 	height: 200px;
 }
 
+#to_cluster.mobile {
+	width: 320px !important;
+	color: white;
+}
+
 .clustered svg {
   position: absolute;
   top: -12px;
@@ -23,6 +28,22 @@
   margin-top: 160px;
   background-color: rgba(69, 69, 69, 0.18);
   padding: 30px;
+}
+
+@media only screen and (max-width: 480px){
+	.intro-text {
+		width: 320px !important;
+	}
+} 
+
+.navigate-btn {
+	width:1100px;
+}
+
+@media only screen and (max-width: 480px){
+	.navigate-btn {
+		width: 320px !important; 
+	}
 }
 
 .black {
