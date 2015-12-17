@@ -210,6 +210,6 @@ image.onerror = function(){
 }
 
 // play background music
-var song = new Audio('../songs/bg.mp3')
+var song = new Audio('../CS498VR/songs/bg.mp3')
 song.loop = true
 song.play()
